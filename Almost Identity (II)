@@ -1,0 +1,8 @@
+//A different way to achieve a near identity is through the square root of a biased square. I saw this technique first in a shader by user "omeometo" in Shadertoy. This approach can be a bit slower than the cubic above, depending on the hardware, but I find myself using it a lot these days. While it has zero derivative, it has a non-zero second derivative, so keep an eye in case it causes problems in your application.
+
+//An extra nice thing is that this function can be used, unaltered, as an smooth-abs() function, which comes handy for symmetric funtions such as mirrored SDFs.
+
+float almostIdentity2( float x, float n )
+{
+    return sqrt(x*x+n);
+}

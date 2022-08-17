@@ -1,0 +1,13 @@
+//Exponential Impulse - by IQ
+
+//Impulses are great for triggering behaviours or making envelopes for music or animation. 
+//Basically, for anything that grows fast and then decays slowly. 
+//The following is an exponential impulse function. 
+//Use k to control the stretching of the function. 
+//Its maximum, which is 1, happens at exactly x = 1/k.
+
+float expImpulse( float x, float k )
+{
+    const float h = k*x;
+    return h*exp(1.0-h);
+}

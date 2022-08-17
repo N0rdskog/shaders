@@ -1,0 +1,11 @@
+//IQ
+//Imagine you don't want to modify a signal unless it's drops to zero or close to it, in which case you want to replace the value with a small possitive constant. Then, rather than clamping the value and introduce a discontinuity, you can smoothly blend the signal into the desired clipped value. So, let m be the threshold (anything above m stays unchanged), and n the value things will take when the signal is zero. Then, the following function does the soft clipping (in a cubic fashion):
+
+float almostIdentity( float x, float m, float n )
+{
+    if( x>m ) return x;
+    const float a = 2.0*n - m;
+    const float b = 2.0*m - 3.0*n;
+    const float t = x/m;
+    return (a*t + b)*t*t + n;
+}

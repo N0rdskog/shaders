@@ -1,0 +1,10 @@
+//Sustained Impulse
+
+//Similar to the previous, but it allows for control on the width of attack (through the parameter "k") and the release (parameter "f") independently. 
+//Also, the impulse releases at a value of 1 instead of 0.
+
+float expSustainedImpulse( float x, float f, float k )
+{
+    float s = max(x-f,0.0)
+    return min( x*x/(f*f), 1+(2.0/f)*s*exp(-k*s));
+}

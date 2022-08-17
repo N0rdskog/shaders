@@ -1,0 +1,7 @@
+//Another impulse function that doesn't use exponentials can be designed by using polynomials. 
+//Use k to control falloff of the function. For example, a quadratic can be used, which peaks at x = sqrt(1/k).
+
+float quaImpulse( float k, float x )
+{
+    return 2.0*sqrt(k)*x/(1.0+k*x*x);
+}

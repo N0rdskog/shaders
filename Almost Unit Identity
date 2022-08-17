@@ -1,0 +1,8 @@
+//By Inigo Quilez
+//This is a near-identiy function that maps the unit interval into itself. It is the cousin of smoothstep(), in that it maps 0 to 0, 1 to 1, and has a 0 derivative at the origin, just like smoothstep. However, instead of having a 0 derivative at 1, it has a derivative of 1 at that point. It's equivalent to the Almost Identiy above with n=0 and m=1. Since it's a cubic just like smoothstep() it is very fast to evaluate:
+
+
+float almostUnitIdentity( float x )
+{
+    return x*x*(2.0-x);
+}
